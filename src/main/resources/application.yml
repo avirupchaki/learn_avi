@@ -1,0 +1,8 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Learn-Service
+
+restURLforTimeWebservice: https://timeapi.io/api/Time/current/zone?timeZone=Europe/
