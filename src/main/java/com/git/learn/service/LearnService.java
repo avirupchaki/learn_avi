@@ -17,7 +17,6 @@ public class LearnService {
 
     @Value("${restURLforTimeWebservice}")
     private String TIME_API_URL;
-    private String strTest = "";
     
     @Autowired
     private RestTemplate restTemplate;
