@@ -1,21 +1,10 @@
 server:
   port: 8081
 
-restURLforTimeWebservice: https://timeapi.io/api/Time/current/zone?timeZone=Europe/
-
 spring:
   application:
     name: Learn-Service
-  datasource:
-    #driverClassName: org.postgreSQL.Driver
-    url: jdbc:postgresql://localhost:5432/UserTestDB
-    username: postgres
-    password: Thursday$1
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: true
-    hibernate:
-      ddlAuto: update
-    showSql: true
+  cloud:
+    config:
+      uri:
+        - http://localhost:9196
