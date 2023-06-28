@@ -21,30 +21,19 @@ public class LearnController {
     @Autowired
     private LearnService learnService;
 
-   /* @GetMapping("/getTime/{city}")
-    public Time getTime(@PathVariable String city)
-    {
-        LOG.info("Inside getTime method.");
-        Time objTime = learnService.getTime(city);
-        return objTime;
-    }*/
-
     @GetMapping("/getTime/{city}")
-    public ResponseEntity<?> getTime(@PathVariable String city)
-    {
+    public ResponseEntity<?> getTime(@PathVariable String city) {
         LOG.info("Inside getTime method.");
         Time objTime = null;
         try {
             objTime = learnService.getTime(city);
-        }catch (Exception ex){
+        } catch (Exception ex) {
             LOG.error(ex.getMessage());
         }
-        if (objTime != null)
-        {
+        if (objTime != null) {
             return new ResponseEntity<>(objTime, HttpStatus.OK);
-        }else{
+        } else {
             return new ResponseEntity<>(objTime, HttpStatus.BAD_REQUEST);
         }
     }
-
 }
